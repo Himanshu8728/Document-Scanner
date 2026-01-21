@@ -80,6 +80,7 @@ The auto‑crop functionality is inspired by popular scanner apps like **CamScan
 - Git
 
 ### Installation
+```bash
 
 git clone https://github.com/Himanshu8728/Document-Scanner.git
 cd Document-Scanner
