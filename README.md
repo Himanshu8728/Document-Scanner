@@ -1,87 +1,92 @@
-📄 Document Scanner Web App
+# 📄 Document Scanner Web App
+
 A web‑based document scanner application that allows users to upload images, automatically detect and crop documents (CamScanner‑style), apply perspective correction, and manage scanned documents using Firebase.
 
-🔗 Project Links
-🌐 Public App URL (Firebase Hosting)
-https://<your-project-id>.web.app
-🔐 Test Credentials
-Email: testuser@example.com
-Password: Test@1234
-Users can also create their own accounts using the Sign Up page.
+---
 
-📦 GitHub Repository
-https://github.com/Himanshu8728/Document-Scanner
-🏗️ Architecture Overview & Data Flow
-Frontend
-React (Vite)
+## 📌 About the Project
 
-Custom CSS for UI
+Document scanning is an essential part of digitizing paperwork.  
+This project provides a **browser‑based document scanner** that works without any native mobile application.
 
-OpenCV.js for client‑side image processing
+The application uses **computer vision techniques with OpenCV.js** to automatically detect documents from images, crop them accurately, and generate a clean scanned output.
 
-Backend / Cloud Services
-Firebase Authentication
+---
 
-Firebase Storage
+## 🧠 Key Features
 
-Cloud Firestore
+- 🔐 User Authentication (Login & Sign Up)
+- 📷 Upload document images
+- ✂️ Automatic document detection & cropping
+- 📐 Perspective correction (top‑down scan)
+- 💾 Save original and processed images
+- 🖼️ Gallery view for scanned documents
+- ⬇️ Download processed images
+- 🗑️ Delete images from gallery
+- ☁️ Cloud‑based storage using Firebase
 
-Firebase Hosting
+---
 
-🔁 Data Flow
-User signs up or logs in using Firebase Authentication
+## 🏗️ Architecture Overview
 
-User uploads an image from local system
+### Frontend
+- React (Vite)
+- Custom CSS for UI
+- OpenCV.js for client‑side image processing
 
-Image is processed in the browser using OpenCV.js
+### Backend / Cloud Services
+- Firebase Authentication
+- Firebase Storage
+- Cloud Firestore
+- Firebase Hosting
 
-Original image and processed image are uploaded to Firebase Storage
+---
 
-Image metadata (URLs, userId, timestamp) is stored in Firestore
+## 🔁 Data Flow
 
-Gallery fetches and displays user‑specific images
+1. User signs up or logs in using **Firebase Authentication**
+2. User uploads an image from the local system
+3. Image is processed in the browser using **OpenCV.js**
+4. Original and processed images are uploaded to **Firebase Storage**
+5. Image metadata (URLs, timestamp, userId) is stored in **Cloud Firestore**
+6. Gallery fetches and displays user‑specific documents
+7. User can download or delete scanned documents
 
-User can download or delete processed images
+---
 
-✂️ How Auto‑Crop Works (Algorithm Steps)
-The auto‑crop feature is inspired by popular scanner apps like CamScanner and Adobe Scan.
+## ✂️ How Auto‑Crop Works (Algorithm)
 
-Algorithm Steps:
-Load image into OpenCV matrix (cv.imread)
+The auto‑crop functionality is inspired by popular scanner apps like **CamScanner**.
 
-Convert image to grayscale
+### Algorithm Steps:
+- Convert image to grayscale
+- Apply Gaussian Blur to reduce noise
+- Perform Canny Edge Detection
+- Strengthen edges using morphological operations
+- Detect contours in the image
+- Select the largest document‑like contour
+- Detect document corner points
+- Apply perspective transformation
+- Generate a clean cropped document
+- Use fallback center crop if document detection fails
 
-Apply Gaussian Blur to reduce noise
+---
 
-Detect edges using Canny Edge Detection
+## ⚙️ Setup Instructions
 
-Strengthen edges using morphological dilation
+### Prerequisites
+- Node.js (v18 or later)
+- Firebase account
+- Git
 
-Detect all contours in the image
-
-Select the largest contour approximated to 4 points (document boundary)
-
-Order detected corner points (top‑left, top‑right, bottom‑right, bottom‑left)
-
-Apply perspective transformation (cv.getPerspectiveTransform)
-
-Warp the image to get a top‑down scanned view
-
-Fallback to center crop if document is not detected clearly
-
-⚙️ Setup Instructions
-Prerequisites
-Node.js (v18+)
-
-Firebase account
-
-Git
-
-Installation
+### Installation
+```bash
 git clone https://github.com/Himanshu8728/Document-Scanner.git
 cd Document-Scanner
 npm install
 Environment Variables (.env)
+env
+Copy code
 VITE_FIREBASE_API_KEY=your_api_key
 VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
 VITE_FIREBASE_PROJECT_ID=your_project_id
@@ -89,53 +94,64 @@ VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
 VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 VITE_FIREBASE_APP_ID=your_app_id
 Run Locally
+bash
+Copy code
 npm run dev
-Build for Production
+Build & Deploy
+bash
+Copy code
 npm run build
-📦 Libraries Used & Licenses
-Library	Purpose	License
-React	UI Framework	MIT
-Vite	Build Tool	MIT
-Firebase	Auth, DB, Storage, Hosting	Apache 2.0
-OpenCV.js	Image Processing	Apache 2.0
-React Router	Routing	MIT
-✅ All libraries are open‑source and allowed for academic use.
+firebase deploy
+🔗 Project Links
+🌐 Public App URL (Firebase Hosting)
+cpp
+Copy code
+https://<your-project-id>.web.app
+🔐 Test Credentials
+graphql
+Copy code
+Email: testuser@example.com
+Password: Test@1234
+📦 GitHub Repository
+arduino
+Copy code
+https://github.com/Himanshu8728/Document-Scanner
+📦 Libraries Used
+React – UI framework (MIT License)
+
+Vite – Build tool (MIT License)
+
+Firebase – Authentication, Storage, Firestore, Hosting (Apache 2.0)
+
+OpenCV.js – Image processing (Apache 2.0)
+
+React Router – Routing (MIT License)
+
+✅ All libraries used are open‑source and permitted for academic use.
 
 ⚖️ Trade‑offs & Future Improvements
-Current Trade‑offs
+Current Limitations
 Auto‑crop accuracy depends on lighting and background
-
-Client‑side processing may be slower on low‑end devices
 
 No manual corner adjustment
 
-Future Improvements
-Manual corner adjustment (drag points)
+Client‑side processing may be slow on low‑end devices
 
-Image enhancement (binarization, sharpening)
+Future Enhancements
+Manual crop corner adjustment
 
-Multi‑page scanning
+Image enhancement (sharpening, thresholding)
+
+Multi‑page document scanning
 
 PDF export
 
-Camera capture for mobile
+Mobile camera capture
 
-Server‑side image processing using Cloud Functions
-
-✅ Conclusion
-This project demonstrates:
-
-Practical use of computer vision in the browser
-
-Secure authentication and cloud storage
-
-Real‑world document scanning workflow
-
-Clean and user‑friendly UI
-
-The application is fully functional, deployed, and ready for further enhancements.
+Server‑side image processing
 
 👤 Author
 Himanshu
-Document Scanner Project
+Document Scanner Web Application
+Academic Project
 
