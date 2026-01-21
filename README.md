@@ -86,35 +86,35 @@ cd Document-Scanner
 npm install
 Environment Variables (.env)
 env
-Copy code
 VITE_FIREBASE_API_KEY=your_api_key
 VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
 VITE_FIREBASE_PROJECT_ID=your_project_id
 VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
 VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 VITE_FIREBASE_APP_ID=your_app_id
+
 Run Locally
 bash
-Copy code
 npm run dev
+
 Build & Deploy
 bash
-Copy code
+
 npm run build
 firebase deploy
 🔗 Project Links
 🌐 Public App URL (Firebase Hosting)
 cpp
-Copy code
+
 https://<your-project-id>.web.app
 🔐 Test Credentials
 graphql
-Copy code
+
 Email: testuser@example.com
 Password: Test@1234
 📦 GitHub Repository
 arduino
-Copy code
+
 https://github.com/Himanshu8728/Document-Scanner
 📦 Libraries Used
 React – UI framework (MIT License)
@@ -153,5 +153,4 @@ Server‑side image processing
 👤 Author
 Himanshu
 Document Scanner Web Application
-Academic Project
 
