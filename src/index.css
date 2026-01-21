@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Login page CSS */
+
+body{
+  background-color: #212121;
+  color: white;
+}
+button{
+  background-color: #6b4ae4;
+  color: white;
+  padding: 2px;
+  margin-top: 2px;
+}
+
+.container {
+  background-color: #222;
+  padding: 30px 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.home-page {
+  min-height: 100vh;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.auto-crop-button{
+  width: 300px;          
+  padding: 14px 24px;    
+  font-size: 18px;
+  border-radius: 12px;
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  margin-bottom: 10px
+}
+
+.view-gallery-button{
+  width: 300px;          
+  padding: 14px 24px;    
+  font-size: 18px;
+  border-radius: 12px;
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  margin-bottom: 10px
+}
+
+.logout-button{
+  width: 300px;          
+  padding: 14px 24px;    
+  font-size: 18px;
+  border-radius: 12px;
+  background-color: #a32616;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  margin-bottom: 10px
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.login-button{
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  background-color: #16a34a;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #15803d;
+}
+.submit-login{
+  display: flex;
+  flex-direction: column; 
+  gap: 16px; 
+  align-items: center;
+}
+
+.email-input,
+.password-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+/* Signup page CSS */
+
+.signUp-page {
+  min-height: 100vh;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signUp-container {
+  background-color: #222;
+  padding: 32px 40px;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 420px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.signUp-container h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.signUp-container form {
+  display: flex;
+  flex-direction: column;  
+  gap: 16px;
+} 
+
+.set-email-input,
+.set-password-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.set-email-input:focus,
+.set-password-input:focus {
+  outline: 2px solid #16a34a;
+}
+
+.create-account-button {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: none;
+  background-color: #16a34a;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.create-account-button:hover {
+  background-color: #15803d;
+  transform: translateY(-2px);
+}
+
+.signUp-container p.text-red-500 {
+  color: #f87171;
+  font-size: 14px;
+}
+
+.signUp-container p {
+  margin-top: 18px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.signUp-container a {
+  color: #3b82f6;
+  text-decoration: underline;
+}
